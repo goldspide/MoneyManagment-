@@ -37,7 +37,8 @@ class Home extends StatelessWidget {
                 ),
               ),
             ),
-            SliverList(delegate: SliverChildBuilderDelegate(
+            SliverList(
+                delegate: SliverChildBuilderDelegate(
               (context, index) {
                 return ListTile(
                   leading: ClipRRect(
@@ -49,13 +50,19 @@ class Home extends StatelessWidget {
                   ),
                   title: Text(
                     geter()[index].name!,
-                    style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+                    style: const TextStyle(
+                        fontSize: 17, fontWeight: FontWeight.w600),
                   ),
                   subtitle: Text(
-                  geter()[index].time!,
+                    geter()[index].time!,
                     style: const TextStyle(fontWeight: FontWeight.w600),
                   ),
-                  trailing: Text(geter()[index].fee!,style: TextStyle(fontWeight: FontWeight.w600,color:geter()[index].buy! ? Colors.red: Colors.green,fontSize: 19)),
+                  trailing: Text(geter()[index].fee!,
+                      style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color:
+                              geter()[index].buy! ? Colors.red : Colors.green,
+                          fontSize: 19)),
                 );
               },
               childCount: geter().length,
